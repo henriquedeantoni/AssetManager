@@ -8,8 +8,4 @@
     <PublishAot>true</PublishAot>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
-
 </Project>
