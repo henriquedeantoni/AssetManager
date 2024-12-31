@@ -17,5 +17,19 @@ namespace AssetManager.Entities
         [MaxLength(500, ErrorMessage = "Maintenance description must be a maximum text of 500 characters")]
         public string MaintenanceDescription { get; set; }
 
+        public DateTime ScheduledDate { get; set; }
+
+        public DateTime? ConclusionDate { get; set; }
+
+        [Required]
+        public MaintenanceStatus Status { get; set; } = MaintenanceStatus.NotScheduled;
+    }
+
+    public enum MaintenanceStatus
+    {
+        NotScheduled,
+        Concluded,
+        Pending,
+        InMaintenance
     }
 }

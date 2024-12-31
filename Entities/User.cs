@@ -5,7 +5,7 @@ namespace AssetManager.Entities
     public class User
     {
         [Required]
-        public Guid Id { get; set; } = Guid.NewGuid();
+        public Guid UserId { get; set; } = Guid.NewGuid();
 
         [Required]
         [MaxLength(50, ErrorMessage = "User name must be a maximum of 50 characters")]
@@ -17,10 +17,13 @@ namespace AssetManager.Entities
         public string UserEmail { get; set; }
 
         [Required]
-        public string Password { get; set; }
+        public string PasswordHash { get; set; }
 
         [Required]
         public string Role { get; set; }
 
+        public List<Maintenance> MaintenancesList { get; set; } = new List<Maintenance>();
+
+        public List<Asset> AssetList { get; set; } = new List<Asset>();
     }
 }
