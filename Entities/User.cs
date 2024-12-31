@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace AssetManager.Entities
 {
@@ -17,6 +18,7 @@ namespace AssetManager.Entities
         public string UserEmail { get; set; }
 
         [Required]
+        [JsonIgnore]
         public string PasswordHash { get; set; }
 
         [Required]
@@ -24,6 +26,6 @@ namespace AssetManager.Entities
 
         public List<Maintenance> MaintenancesList { get; set; } = new List<Maintenance>();
 
-        public List<Asset> AssetList { get; set; } = new List<Asset>();
+        public List<Asset> AssignedAssetsList { get; set; } = new List<Asset>();
     }
 }
