@@ -2,7 +2,7 @@
 {
     public class AssetRepository : IAssetRepository
     {
-
+        private 
         
     }
 }
