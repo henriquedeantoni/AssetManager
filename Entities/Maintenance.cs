@@ -11,6 +11,9 @@ namespace AssetManager.Entities
         public Guid AssetId { get; set; }
 
         [Required]
+        public Guid UserId { get; set; }
+
+        [Required]
         public Asset Asset { get; set; }
 
         [Required]
@@ -23,6 +26,8 @@ namespace AssetManager.Entities
 
         [Required]
         public MaintenanceStatus Status { get; set; } = MaintenanceStatus.NotScheduled;
+
+        public User User { get; set; }
     }
 
     public enum MaintenanceStatus

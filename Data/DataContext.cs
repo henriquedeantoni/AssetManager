@@ -15,7 +15,15 @@ namespace AssetManager.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            
+            modelBuilder.Entity<Asset>()
+                .HasMany(a => a.MaintenancesList)
+                .WithOne(a => a.Asset)
+                .HasForeignKey(a => a.AssetId);
+
+            modelBuilder.Entity<User>()
+                .HasMany(a => a.MaintenancesList)
+                .WithOne(a => a.User)
+                .HasForeignKey(a => a.UserId);            
         }
     }
 }

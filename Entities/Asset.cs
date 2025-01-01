@@ -5,7 +5,7 @@ namespace AssetManager.Entities
     public class Asset
     {
         [Required]
-        public Guid Id { get; set; } = Guid.NewGuid();
+        public Guid AssetId { get; set; } = Guid.NewGuid();
 
         [Required]
         [MaxLength(100, ErrorMessage = "Asset name must be a maximum of 100 characters")]
@@ -37,10 +37,12 @@ namespace AssetManager.Entities
         public AssetStatus Status { get; set; } = AssetStatus.Active;
 
         [Required]
-        public Guid? AssignedUserId { get; set; } // Responsável (pode ser nulo)
+        public Guid? AssignedUserId { get; set; } 
 
         [Required]
         public User? AssignedUser { get; set; }
+
+        public List<Maintenance> MaintenancesList { get; set; } = new List<Maintenance>();
     }
 
     public enum AssetStatus
