@@ -23,7 +23,12 @@ namespace AssetManager.Data
             modelBuilder.Entity<User>()
                 .HasMany(a => a.MaintenancesList)
                 .WithOne(a => a.User)
-                .HasForeignKey(a => a.UserId);            
+                .HasForeignKey(a => a.UserId);
+
+            modelBuilder.Entity<User>()
+                .HasMany(a => a.AssignedAssetsList)
+                .WithOne(a => a.AssignedUser)
+                .HasForeignKey(a => a.AssignedUserId);
         }
     }
 }
